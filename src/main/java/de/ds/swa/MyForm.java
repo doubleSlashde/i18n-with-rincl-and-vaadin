@@ -51,6 +51,13 @@ public class MyForm extends FormLayout implements Rincled {
 
    public void initLayout() {
 
+      initComponents();
+
+      setMargin(true);
+      setSpacing(true);
+   }
+
+   private void initComponents() {
       final Label laDate = new Label(dateFormat.format(new Date()));
       laDate.setCaption(i18n.getString("text.date.caption"));
 
@@ -65,8 +72,6 @@ public class MyForm extends FormLayout implements Rincled {
       button.addClickListener( e -> actionPerformed());
 
       addComponents(cbLanguage, laDate, laPrice, tfName, button);
-      setMargin(true);
-      setSpacing(true);
 
       tfName.focus();
    }
